@@ -18,3 +18,20 @@ export const getData = async () => {
     };
   }
 };
+ 
+export const getSingle = async (id: string) => {
+  try {
+    const response = await fetch(`https://dummyjson.com/products/${id}`);
+    if (!response.ok) {
+      throw new Error("Failed to Fetch data");
+    }
+    const data = await response.json();
+    return data;
+  } catch (err) {
+    console.error("Error fetching data:", err);
+    return {
+      props: { data: null, err: err },
+    };
+  }
+}
+

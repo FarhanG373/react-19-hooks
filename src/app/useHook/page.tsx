@@ -1,6 +1,6 @@
 "use client";
 import React, { use, Suspense } from "react";
-import { Wrapper, FlexWrap, Flex, Card, Loader,BreadCrumb } from "mfg-ui-components";
+import { Wrapper, FlexWrap, Flex, Card, Loader,BreadCrumb, Button } from "mfg-ui-components";
 import { getData } from "./apiFile";
 import ErrorBoundary from "./ErrorBoundary";
 
@@ -34,6 +34,7 @@ const UseHook = () => {
                         CardImagePath={item.thumbnail}
                         CardHeadingType="h3"
                         cardHeading={item.title}
+                        cardFooterChildren={<Button link={`/useHook/single/${item.id}`}>View More</Button>}
                       />
                     </Flex>
                   );
